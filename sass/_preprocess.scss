@@ -1,0 +1,48 @@
+/* Mixins */
+
+@mixin fontsize ($size,$font) {
+  font-size: $size;
+  font-family: $font;
+}
+
+@mixin bgcolor($bgcolor){
+   background-color: $bgcolor;
+}
+
+@mixin fontcolor($fcolor){
+	color: $fcolor;
+}
+
+@mixin imgtop($top){
+	margin-top: $top;
+}
+
+@mixin bordercol($bordercol){
+	border-color: $bordercol;
+}
+
+/* Extend */
+
+.btn{
+	@include bgcolor($dunkelrot);
+	@include fontcolor($white);
+	@extend .noborder;
+}
+
+
+.aktiv{
+	@include fontcolor($white);
+    @include bgcolor($dunkelrot2);
+}
+
+.noborder{
+	border-style: none;
+}
+
+.fontfam{
+	font-family: 'Raleway', sans-serif;
+}
+
+.textcenter{
+	text-align: center;
+}

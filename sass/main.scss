@@ -1,0 +1,320 @@
+@import 'farben'; 
+@import 'fonts';
+@import 'preprocess';
+
+
+/* body */
+
+body { 
+	@include bgcolor($bg);
+	@include fontcolor($grau);
+	@extend .fontfam;
+
+	.sr-only{
+		@include fontcolor($dunkelrot);
+	}
+}
+
+
+/* container */
+
+.container{
+	width: 100%;
+}
+
+
+/* Navigation*/
+
+.navbar{
+	@include bgcolor($dunkelrot);
+	@extend .noborder;
+	margin-bottom: 0%;
+	margin-top: 0%;
+
+	#navbar{
+		li{
+			a{
+				@include fontcolor($white);
+
+			}
+			.active{
+				@include fontcolor($white);
+			}
+		}
+	}
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+   @extend .aktiv;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    @include fontcolor($white);
+}
+
+
+.navbar-inverse .navbar-brand {
+	@include fontcolor($white);
+	@include fontsize(3em,$brand);
+	margin: 4%
+}
+
+.navbar-nav>li>a {
+    padding-top: 25px;
+    padding-bottom: 19px;
+}
+
+.nav>li>a {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    @include bgcolor($dunkelrot2);
+}
+
+
+/* Navigation mobile */
+
+
+.sidebar-offcanvas{
+   @include bgcolor($dunkelrot);
+    padding-right: 3%;
+    a{
+    	@include fontcolor($white);
+    	@include fontsize(1em,$textfont);
+    	line-height: 3em;
+    }
+    li{
+    	list-style: none;
+    }
+  }
+
+.navbar-header{
+	@include bgcolor($dunkelrot);
+	a{
+		@include fontsize(2.5em,$brand);	
+		@include fontcolor($white);
+	}	
+}
+
+.visible-xs{
+	.btn{
+		@include fontsize(1em,$textfont);
+		border-radius: 0;
+	}
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover{
+	@extend .btn;
+}
+
+.btn-primary:hover {
+    @extend .btn;
+}
+
+
+
+/* Buttons */
+
+.btn-group{
+	@extend .btn;
+}
+
+.navbar{
+	.btn-group{
+		margin-top: 1%;
+		margin-left: 53%;
+	}
+}
+
+.btn-default:hover {
+	@extend .aktiv;
+}
+
+
+/* Marketing */
+
+.marketing{
+	.active{
+		@include fontsize(1.563em, $textfont);
+		@include bgcolor($dunkelrot);
+		@extend .noborder;
+	}
+	.col-lg-4{
+		@include fontsize(1.188em, $textfont);
+		@extend .textcenter;
+		margin-top: 2%;
+	}
+	h2{
+		@include fontcolor($dunkelrot);
+		@include fontsize(1.875em,$textfont);
+	}
+
+}
+
+.inhalt{
+	width: 75%;
+	margin: auto;
+	margin-top: 3%;
+}
+
+
+
+/* Carousel */
+
+.carousel-indicators{
+	.active{
+		@include bgcolor($dunkelrot);
+		}
+	li{
+		@include bordercol($dunkelrot);
+	}
+}
+
+
+/* Liste bei Lokalen */
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+	@include bgcolor($dunkelrot);
+}
+
+.list-group-item{
+	a{
+		@include fontcolor($grau);
+	}
+}
+
+
+/* Lokale - Unterseiten */
+
+.featurette{
+
+	img{
+		@include imgtop(10%);
+	}
+
+	.featurette-heading{
+		@include fontsize(1.875em,$textfont);
+	}
+
+	.lead{
+		@include fontsize(1.188em,$textfont);
+	}
+
+}
+
+.featurette-divider{
+	@include bordercol($dunkelrot);
+}
+
+.submitbtn{
+	@extend .btn;	
+}
+
+.kommentare{
+	margin-bottom: 3%;
+}
+
+
+
+
+/* Accordion */
+
+#accordion{
+
+    @extend .fontfam;
+
+
+	img{
+		@include imgtop(2%);
+		margin-left: 2%;
+		margin-right: 4%;
+		margin-bottom: 2%;
+	}
+	p{
+		margin: 2%;
+		@include fontcolor($grau);
+	}
+	.pBottom{
+		margin-bottom: 10%;
+	}
+	h2{
+		@include fontsize(1.563em, $textfont);
+		@include fontcolor($white);
+	}
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+ 	border-style: none !important;
+    background-color: $dunkelrot !important;
+}
+
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: $dunkelrot !important;
+    margin-left: 2%;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: $bg !important;
+    margin-left: 2%;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border-style: none !important;
+}
+
+.ui-widget-content {
+    border-color: $bg !important;
+}
+
+
+
+/* Login */
+
+.input-group{
+	display: inline-block;
+	width: 100%;
+	margin-right: 50%;
+	float: left;	
+}
+
+.input-group-addon {
+    @extend .noborder;
+    @include bgcolor($dunkelrot);
+    @include fontcolor($white);
+
+}
+
+
+
+
+/* footer*/
+
+
+footer{
+	@include bgcolor($bg);
+	margin-top: 20%;
+	@extend .textcenter;
+	a{
+		@include fontcolor($dunkelrot2);
+
+	}
+	a:focus, a:hover {
+   		@include fontcolor($rot);
+	}
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+	.inhalt{
+		width: 95%;
+		margin: auto;
+	}   
+}
+
+
+
+

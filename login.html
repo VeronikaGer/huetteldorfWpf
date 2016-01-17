@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hütteldorf</title>
+
+    <!-- CSS -->
+    <link href="dist/bootstrap.min.css" rel="stylesheet">
+    <link href="css/offcanvas.css" rel="stylesheet"><!-- css für offcanvas Navigation-->
+    <link href="assets/ie10-viewport-bug-workaround.css" rel="stylesheet"> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="sass/main.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <!-- Favicon -->
+    <link rel="icon" href="bilder/favicon.png" type="image/png" />
+  </head>
+
+
+  <body>
+
+    <div class="container"><!-- Container, indem der ganze Content enthalten ist -->
+    <div class="row">
+
+    <a href="#content" class="sr-only sr-only-focusable">Menü überspringen</a> <!-- wenn man einmal den Tab drückt, kann man das Menü überspringen um zum eigentlichen Inhalt zu gelangen -->
+
+    <!-- NAVBAR
+================================================== -->
+
+
+    <!-- Kleiner Display - offcanvas -->
+    <div class="visible-xs">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="index.php">Hütteldorf</a>
+      </div>
+    <button class="btn btn-primary btn-xs" data-toggle="offcanvas">Menü</button>
+  </div>
+
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-left">
+        <div class="visible-xs col-xs-12 sidebar-offcanvas">
+          <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="lokale.php">Lokale</a></li>
+            <li><a href="sehenswuerdigkeiten.php">Sehenswürdigkeiten</a></li>
+            <li><a href="erholungsraeume.php">Erholungsräume</a></li>
+            <li class="active"><a href="login.html">Loginseite</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- Ende visible-xs -->
+
+
+<!-- Großer Display - Menüleiste -->
+      <div class="navi visible-lg visible-md visible-sm" >
+
+        <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">Hütteldorf</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="lokale.php">Lokale</a></li>
+            <li><a href="sehenswuerdigkeiten.php">Sehenswürdigkeiten</a></li>
+            <li><a href="erholungsraeume.php">Erholungsräume</a></li>
+            <li><a href="login.html">Loginseite</a></li>
+          </ul>
+        
+      </div><!-- Ende navbar header-->
+    </div><!-- Ende container -->
+    </nav>
+
+  </div> <!-- Ende visible-lg -->
+
+
+
+    <!-- Login
+    ================================================== -->
+
+<div class="row row-offcanvas row-offcanvas-left">
+<div class="inhalt" id="content" tabindex="-1"> <!-- hier wird hingesprungen, wenn man das Menü überspringen will-->
+
+<div class="container marketing"> 
+
+<div class="input-group"> <!-- Eingabe Felder von bootstrap-->
+<div class="col-lg-4 col-md-6 col-xs-12">
+<h2>Login</h2>
+<form action="php/login.php" method="POST">
+
+  <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <!-- Icon für Benutzer -->
+  <input type="text" class="form-control" placeholder="Benutzername" aria-describedby="basic-addon1" name="benutzername">
+  
+ <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span> <!-- Icon für Passwort -->
+  <input type="password" class="form-control" placeholder="Passwort" aria-describedby="basic-addon1" name="passwort">
+
+
+<div class="btn-group" role="group" aria-label="..."> <!-- Button zum einloggen -->
+  <button type="submit" class="btn btn-default" name="login">Einloggen</button>
+</div>
+
+</form>
+</div>
+</div><!-- Ende input group -->
+
+
+<!-- Registrierung
+    ================================================== -->
+
+<div class="input-group"> <!-- Eingabe Felder von bootstrap-->
+<div class="col-lg-4 col-md-6 col-xs-12">
+<h2>Registrierung</h2>
+<form action="php/registrieren.php" method="POST">
+
+  <span class="input-group-addon" id="basic-addon3"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span> <!-- Icon für Benutzer -->
+  <input type="text" class="form-control" placeholder="Benutzername" aria-describedby="basic-addon1" name="benutzername">
+  
+ <span class="input-group-addon" id="basic-addon4"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span> <!-- Icon für Passwort -->
+  <input type="password" class="form-control" placeholder="Passwort" aria-describedby="basic-addon1" name="passwort">
+ 
+<div class="btn-group" role="group" aria-label="..."> <!-- Button zum registrieren -->
+<button type="submit" class="btn btn-default" name="register">Registrieren</button>
+</div>
+
+</form>
+</div>
+</div> <!-- Ende input group-->
+
+
+
+
+<!-- FOOTER
+================================================== -->
+    <footer>
+      <p>&copy; 2015 Veronika Gerstner &middot; | <a href="mailto:veronika.gerstner@gmx.at">Kontakt</a> | <a href="#">Top</a></p>
+    </footer>
+
+    </div><!-- Ende container marketing -->
+  </div><!-- Ende inhalt-->
+</div><!-- Ende row row-offcanvas -->
+</div> <!-- Ende row -->
+</div> <!-- Ende container -->
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/ie-emulation-modes-warning.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/ie10-viewport-bug-workaround.js"></script>
+     <script src="js/offcanvas.js"></script><!-- js für offcanvas -->
+  </body>
+</html>
